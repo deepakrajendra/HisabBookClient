@@ -1,0 +1,22 @@
+
+<div class="row">
+  <div class="col-md-12">
+  <button class="btn btn-primary" (click)="openAddMetalForm()">Add Metal</button>
+  </div>
+</div>
+
+<ag-grid-angular 
+style="width: 100%" 
+class="ag-theme-material" 
+gridAutoHeight="true"
+[gridOptions]="gridOptions" 
+[columnDefs]="columnDefs"
+[rowData]="rowData" 
+paginationPageSize="2" 
+[icons]="icons" 
+
+[rowSelection]="multiple" 
+[pagination]="true" 
+(gridReady)="onReady($event)"
+enableColResize enableSorting enableFilter suppressRowClickSelection suppressPaginationPanel="true">
+</ag-grid-angular>

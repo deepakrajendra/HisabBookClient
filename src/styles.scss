@@ -1,0 +1,22 @@
+/* You can add global styles to this file, and also import other style files */
+@import 'assets/bootstrap/scss/bootstrap-reboot';
+@import 'assets/bootstrap/scss/bootstrap';
+@import 'assets/scss/paper-dashboard';
+
+@import "~ag-grid/dist/styles/ag-grid.css";
+@import "~ag-grid/dist/styles/ag-theme-material.css";
+
+
+.ag-theme-material .ag-header-cell{
+    border-left: 1px solid lightgrey !important; 
+    border-top: 1px solid lightgrey !important; 
+}
+
+.ag-theme-material .ag-cell{
+    border-left: 1px solid lightgrey !important; 
+}
+
+.ag-theme-material .ag-cell:last-child{
+    border-right: 1px solid lightgrey;
+}
+ 

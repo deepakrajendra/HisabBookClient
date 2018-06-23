@@ -1,0 +1,13 @@
+<ul class="main-nav">
+	<li routerLinkActive="active-tab">
+		<a [routerLink]="['metals']">Metals</a>
+	</li>
+	<li>
+		<a [routerLink]="['purity']">Purity</a>
+	</li>
+</ul>
+<div class="card">
+	<div class="card-body">
+		<router-outlet></router-outlet>
+	</div>
+</div>
