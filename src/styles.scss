@@ -1,7 +1,7 @@
 /* You can add global styles to this file, and also import other style files */
-@import 'assets/bootstrap/scss/bootstrap-reboot';
-@import 'assets/bootstrap/scss/bootstrap';
-@import 'assets/scss/paper-dashboard';
+@import '~assets/bootstrap/scss/bootstrap-reboot';
+@import '~assets/bootstrap/scss/bootstrap';
+@import '~assets/scss/paper-dashboard';
 
 @import "~ag-grid/dist/styles/ag-grid.css";
 @import "~ag-grid/dist/styles/ag-theme-material.css";
@@ -20,3 +20,55 @@
     border-right: 1px solid lightgrey;
 }
  
+.ag-theme-material .ag-cell {
+    // border-right: 1px solid #e0e0e0 ;
+    // padding-left:16px;
+    // padding-right:16px;
+}
+
+
+.ag-theme-material .ag-cell-focus {
+    border:1px solid #3D9EED;  
+}
+
+.ag-header-cell {
+    // border-top: 1px solid #e0e0e0;
+    // border-right: 1px solid #e0e0e0;
+}
+
+.ag-theme-material .ag-header-row {
+background-color: #F4F5F8;
+}
+
+// .ag-theme-material .ag-header-cell, .ag-theme-material .ag-header-group-cell {
+//     line-height: 40px;
+//     padding-left:16px;
+//     padding-right:16px;
+// }
+
+// .ag-theme-material .ag-header-cell-label .ag-header-cell-text {
+//     font-size: 10px;
+// }
+// .ag-theme-material .ag-header-select-all span {
+//     height: 76%;
+//     }
+
+    .ag-icon ag-icon-desc{
+        height:37px;
+    }
+
+    .ag-theme-material .ag-header-cell-label .ag-header-icon span {
+     height: 10px;
+    }
+
+    .ag-theme-material .ag-header-cell-resize::after {
+        border-right: 1px solid #e0e0e0;
+        box-sizing: content-box;
+        content: "" !important;
+        display: block;
+        height: 24px;
+        margin-top: 16px;
+        overflow: hidden;
+        text-indent: 8px;
+        width: 8px;
+    }

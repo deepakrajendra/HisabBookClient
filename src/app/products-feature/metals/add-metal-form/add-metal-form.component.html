@@ -1,6 +1,6 @@
   <div class="modal-header">
   <h4 class="modal-title pull-left mt-0">Add Metal</h4>
-  <button type="button" class="close pull-right" aria-label="Close" (click)="modalRef.hide()">
+  <button type="button" class="close pull-right" aria-label="Close" (click)="bsModalRef.hide()">
     <span aria-hidden="true">&times;</span>
   </button>
 </div>
@@ -30,7 +30,8 @@
       <div class="col-md-12">
         <div class="pull-right">
           <button type="submit" class="btn btn-primary">Add</button>
-          <button type="submit" class="btn btn-danger">Cancel</button>
+          <button type="submit" class="btn btn-danger" (click)="bsModalRef.hide()">Cancel</button>
+
         </div>
       </div>
     </div>

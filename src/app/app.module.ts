@@ -14,6 +14,7 @@ import { ProductsFeatureComponent } from './products-feature/products-feature.co
 import { MetalsComponent } from './products-feature/metals/metals.component';
 import { PurityComponent } from './products-feature/purity/purity.component';
 import { AddMetalFormComponent } from './products-feature/metals/add-metal-form/add-metal-form.component';
+import { ActionsRendererComponent } from './products-feature/metals/actions-renderer/actions-renderer.component';
 
 const appRoutes: Routes = [
   { path: 'products-feature', component: ProductsFeatureComponent,
@@ -34,12 +35,14 @@ const appRoutes: Routes = [
 @NgModule({
   imports:      [ BrowserModule, FormsModule, TabsModule.forRoot(),
     ModalModule.forRoot(),
-    AgGridModule.withComponents([]),
+    AgGridModule.withComponents([
+      ActionsRendererComponent
+    ]),
    RouterModule.forRoot(
       appRoutes,
       { enableTracing: true } // <-- debugging purposes only
     )],
-  declarations: [ AppComponent, SideNavComponent, TopNavComponent, ProductsFeatureComponent, MetalsComponent, PurityComponent, AddMetalFormComponent ],
+  declarations: [ AppComponent, SideNavComponent, TopNavComponent, ProductsFeatureComponent, MetalsComponent, PurityComponent, AddMetalFormComponent, ActionsRendererComponent ],
   bootstrap:    [ AppComponent ],
   entryComponents: [AddMetalFormComponent]
 })

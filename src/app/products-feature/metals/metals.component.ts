@@ -4,7 +4,7 @@ import { BsModalService } from 'ngx-bootstrap/modal';
 import { BsModalRef } from 'ngx-bootstrap/modal/bs-modal-ref.service';
 
 import { AddMetalFormComponent } from './add-metal-form/add-metal-form.component';
-
+import {ActionsRendererComponent } from './actions-renderer/actions-renderer.component';
 @Component({
   selector: 'app-metals',
   templateUrl: './metals.component.html',
@@ -85,6 +85,14 @@ selected ="1";
 
     const columnDefs = [
       {
+        headerName: 'Id',
+        field: 'id',
+        headerCheckboxSelection: true,
+        checkboxSelection:true,
+        filter:"agTextColumnFilter",
+        suppressFilter: true
+      },
+      {
         headerName: 'METAL',
         field: 'metalName',
         headerCheckboxSelection: true,
@@ -109,7 +117,11 @@ selected ="1";
         headerName:'ACTIONS',
         suppressFilter: true,
         suppressSorting:true,
-        // cellRendererFramework:ActionsRendererComponent
+        valueGetter: function getId(params){
+          return params.data.id;
+        },
+        // cellRenderer: this.actionsRenderer
+        cellRendererFramework:ActionsRendererComponent
       }
 
     ];
@@ -117,6 +129,10 @@ selected ="1";
   }
 
   // k 
+
+  actionsRenderer(params: any){
+return  '<div class="d-flex"><button (click)="openAddMetalForm()">Edit</button><a>Delete</a></div>';
+  }
 
   concatReviewers(params: any) {
     var reviewers = "";
@@ -133,7 +149,10 @@ selected ="1";
     this.bsModalRef = this.modalService.show(AddMetalFormComponent, Object.assign({}, { class: 'gray' }));
     this.bsModalRef.content.closeBtnName = 'Close';
   }
-
+  openEditMetalForm(id: any)
+  {
+    this.bsModalRef = this.modalService.show(AddMetalFormComponent, Object.assign({id:id}, { class: 'gray' }));
+  }
 }
 
 export class Metal{
